@@ -15,6 +15,6 @@
         
         "api:deploy": "cd udagram/udagram-api && npm run deploy",
 
-        "deploy": "eb init && npm run api:deploy && npm run frontend:deploy"
+        "deploy": "npm run api:deploy && npm run frontend:deploy"
     }
 }
