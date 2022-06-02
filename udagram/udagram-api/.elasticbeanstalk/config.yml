@@ -1,6 +1,4 @@
 branch-defaults:
-  default:
-    environment: Thirdproject-env
   main:
     environment: Thirdproject-env
 environment-defaults:
