@@ -1,82 +1,95 @@
-# Hosting a Full-Stack Application
+### Infrastructure Description
+  db using postresql hosted on AWS RDS
+  backend using nodejs and express hosted on AWS ElasticBeanStalk
+  UI using angular - single page application hosted on AWS S3 bucket
 
-### **You can use you own project completed in previous courses or use the provided Udagram app for completing this final project.**
-
----
-
-In this project you will learn how to take a newly developed Full-Stack application built for a retailer and deploy it to a cloud service provider so that it is available to customers. You will use the aws console to start and configure the services the application needs such as a database to store product information and a web server allowing the site to be discovered by potential customers. You will modify your package.json scripts and replace hard coded secrets with environment variables in your code.
-
-After the initial setup, you will learn to interact with the services you started on aws and will deploy manually the application a first time to it. As you get more familiar with the services and interact with them through a CLI, you will gradually understand all the moving parts.
-
-You will then register for a free account on CircleCi and connect your Github account to it. Based on the manual steps used to deploy the app, you will write a config.yml file that will make the process reproducible in CircleCi. You will set up the process to be executed automatically based when code is pushed on the main Github branch.
-
-The project will also include writing documentation and runbooks covering the operations of the deployment process. Those runbooks will serve as a way to communicate with future developers and anybody involved in diagnosing outages of the Full-Stack application.
-
-# Udagram
-
-This application is provided to you as an alternative starter project if you do not wish to host your own code done in the previous courses of this nanodegree. The udagram application is a fairly simple application that includes all the major components of a Full-Stack web application.
-
-
-
-### Dependencies
-
-```
-- Node v14.15.1 (LTS) or more recent. While older versions can work it is advisable to keep node to latest LTS version
-
-- npm 6.14.8 (LTS) or more recent, Yarn can work but was not tested for this project
-
-- AWS CLI v2, v1 can work but was not tested for this project
-
-- A RDS database running Postgres.
-
-- A S3 bucket for hosting uploaded pictures.
-
-```
-
-### Installation
-
-Provision the necessary AWS services needed for running the application:
-
-1. In AWS, provision a publicly available RDS database running Postgres. <Place holder for link to classroom article>
-1. In AWS, provision a s3 bucket for hosting the uploaded files. <Place holder for tlink to classroom article>
-1. Export the ENV variables needed or use a package like [dotnev](https://www.npmjs.com/package/dotenv)/.
-1. From the root of the repo, navigate udagram-api folder `cd starter/udagram-api` to install the node_modules `npm install`. After installation is done start the api in dev mode with `npm run dev`.
-1. Without closing the terminal in step 1, navigate to the udagram-frontend `cd starter/udagram-frontend` to intall the node_modules `npm install`. After installation is done start the api in dev mode with `npm run start`.
-
-## Testing
-
-This project contains two different test suite: unit tests and End-To-End tests(e2e). Follow these steps to run the tests.
-
-1. `cd starter/udagram-frontend`
-1. `npm run test`
-1. `npm run e2e`
-
-There are no Unit test on the back-end
-
-### Unit Tests:
-
-Unit tests are using the Jasmine Framework.
-
-### End to End Tests:
-
-The e2e tests are using Protractor and Jasmine.
-
-## Built With
-
-- [Angular](https://angular.io/) - Single Page Application Framework
-- [Node](https://nodejs.org) - Javascript Runtime
-- [Express](https://expressjs.com/) - Javascript API Framework
-
-## License
-
-[License](LICENSE.txt)
+### App Dependencies
+## Back-End
+# Dependencies
+  "@types/bcryptjs": "2.4.2",
+  "@types/jsonwebtoken": "^8.3.2",
+  "aws-sdk": "^2.429.0",
+  "bcryptjs": "2.4.3",
+  "body-parser": "^1.18.3",
+  "cors": "^2.8.5",
+  "dotenv": "^8.2.0",
+  "email-validator": "^2.0.4",
+  "express": "^4.16.4",
+  "jsonwebtoken": "^8.5.1",
+  "pg": "^8.7.1",
+  "reflect-metadata": "^0.1.13",
+  "sequelize": "^5.21.4",
+  "sequelize-typescript": "^0.6.9"
   
-##  link to a hosted working Front-End Application
-  [Link](http://randomudacity1233215.s3-website-us-east-1.amazonaws.com/)
+# Dev Dependencies
+  "@types/bluebird": "^3.5.26",
+  "@types/cors": "^2.8.6",
+  "@types/express": "^4.16.1",
+  "@types/node": "^11.11.6",
+  "@types/sequelize": "^4.27.44",
+  "@types/validator": "^10.9.0",
+  "@typescript-eslint/eslint-plugin": "^2.19.2",
+  "@typescript-eslint/parser": "^2.19.2",
+  "chai": "^4.2.0",
+  "chai-http": "^4.2.1",
+  "eslint": "^6.8.0",
+  "eslint-config-google": "^0.14.0",
+  "mocha": "^6.1.4",
+  "ts-node-dev": "^1.0.0-pre.32",
+  "typescript": "^3.9.10"
   
-## CircleCi
-  Images added as circleci1.png, circleci2.png, and circleci3.png in the root dir
-
-## Configuration page of my AWS services
-  Images added as config1.png
+## Front-End
+# Dependencies
+  "@angular/common": "^8.2.14",
+  "@angular/core": "^8.2.14",
+  "@angular/forms": "^8.2.14",
+  "@angular/http": "^7.2.16",
+  "@angular/platform-browser": "^8.2.14",
+  "@angular/platform-browser-dynamic": "^8.2.14",
+  "@angular/router": "^8.2.14",
+  "@ionic-native/core": "^5.0.0",
+  "@ionic-native/splash-screen": "^5.0.0",
+  "@ionic-native/status-bar": "^5.0.0",
+  "@ionic/angular": "^4.1.0",
+  "core-js": "^2.5.4",
+  "rxjs": "~6.5.4",
+  "zone.js": "~0.9.1"
   
+# Dev Dependencies
+  "@angular-devkit/architect": "~0.12.3",
+  "@angular-devkit/build-angular": "^0.803.24",
+  "@angular-devkit/core": "~7.2.3",
+  "@angular-devkit/schematics": "~7.2.3",
+  "@angular/cli": "~8.3.25",
+  "@angular/compiler": "~8.2.14",
+  "@angular/compiler-cli": "~8.2.14",
+  "@angular/language-service": "~8.2.14",
+  "@ionic/angular-toolkit": "~1.4.0",
+  "@types/jasmine": "~2.8.8",
+  "@types/jasminewd2": "~2.0.3",
+  "@types/node": "~10.12.0",
+  "@typescript-eslint/eslint-plugin": "^2.20.0",
+  "@typescript-eslint/parser": "^2.20.0",
+  "codelyzer": "~4.5.0",
+  "jasmine-core": "~2.99.1",
+  "jasmine-spec-reporter": "~4.2.1",
+  "karma": "~3.1.4",
+  "karma-chrome-launcher": "~2.2.0",
+  "karma-coverage-istanbul-reporter": "~2.0.1",
+  "karma-jasmine": "~1.1.2",
+  "karma-jasmine-html-reporter": "^0.2.2",
+  "protractor": "~5.4.0",
+  "ts-node": "~8.0.0",
+  "tslint": "~5.12.0",
+  "typescript": "^3.5.3"
+  
+### Pipeline Process
+  1. Installing orbs node@5.0.2
+  2. Install Front-End Dependencies
+  3. Install API Dependencies
+  4. Front-End Lint
+  5. Front-End Build
+  6. API Build
+  7. Hold
+  8. Installing orbs aws-elastic-beanstalk@2.0.1, and aws-cli@3.1.1
+  9. Deploy App by deploying api first then frontend
