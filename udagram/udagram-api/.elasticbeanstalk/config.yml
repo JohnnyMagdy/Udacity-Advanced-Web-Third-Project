@@ -1,12 +1,12 @@
 branch-defaults:
   main:
-    environment: Thirdproject-env
+    environment: Udacity-env
 environment-defaults:
-  Thirdproject-env:
+  Udacity-env:
     branch: null
     repository: null
 global:
-  application_name: Third Project
+  application_name: Udacity
   default_ec2_keyname: null
   default_platform: Node.js 14 running on 64bit Amazon Linux 2
   default_region: us-east-1
