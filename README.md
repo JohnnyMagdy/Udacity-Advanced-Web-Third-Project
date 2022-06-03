@@ -75,8 +75,14 @@ The e2e tests are using Protractor and Jasmine.
   [Link](http://randomudacity1233215.s3-website-us-east-1.amazonaws.com/)
   
 ## CircleCi
-  Images added as circleci1.png, circleci2.png, and circleci3.png in the root dir
+  Images added as CircleCi 1.png, CircleCi 2.png, and CircleCi 3.png in the root dir
 
 ## Configuration page of my AWS services
-  Images added as config1.png
-  
+  In root directory images added as:
+  1. RDS:
+     - RDS config 1.png
+     - RDS config 2.png
+  2. EB: EBConfig.png
+  3. S3:
+     - S3 bucket config 1.png
+     - S3 bucket config 2.png
