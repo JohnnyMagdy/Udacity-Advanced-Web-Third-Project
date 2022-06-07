@@ -60,7 +60,7 @@ jobs:
           name: Deploy App
           # TODO: Install, build, deploy in both apps
           command: |
-            npm run deploy && eb setenv
+            npm run deploy && eb setenv AWS_BUCKET=randomudacity1233215 AWS_PROFILE=default AWS_REGION=us-east-1 JWT_SECRET=MySecret PORT=8080 POSTGRES_DB=postgres POSTGRES_HOST=database-1.clk4rpzphe1g.us-east-1.rds.amazonaws.com POSTGRES_PASSWORD=postgres POSTGRES_USERNAME=postgres
             
 workflows:
   udagram:
